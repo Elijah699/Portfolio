@@ -16,8 +16,8 @@ const RotateIcon = keyframes`
 export const ContactWrapper = styled.div`
   font-family: 'Comfortaa', cursive;
   padding: 1.25rem;
-  margin: 3.5rem 0;
-  height: 100vh;
+  margin: 3.5rem 0 1rem;
+  /* height: 100vh; */
   width: 100%;
 
   .flex {

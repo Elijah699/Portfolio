@@ -1,14 +1,14 @@
-import musicityImage from './images/musicity.jpg';
-import explorer from './images/p-explorer.jpg';
-import covid from './images/covid.jpg';
-import tandem from './images/tandem.jpg';
+// import musicityImage from './images/musicity.jpg';
+// import explorer from './images/p-explorer.jpg';
+// import covid from './images/covid.jpg';
+// import tandem from './images/tandem.jpg';
 
 const projectData = [
   {
     id: 1,
     name: 'MusiCity',
     abstract: 'MusiCity landing page.',
-    image: musicityImage,
+    // image: musicityImage,
     link: 'https://musicity.netlify.app/',
     github: 'https://musicity.netlify.app/',
     tech: 'ReactJS, Styled-components',
@@ -20,7 +20,7 @@ const projectData = [
     name: 'Project Explorer',
     abstract:
       'A repository for final year student to upload their project to give juniors insight into topics they worked on.',
-    image: explorer,
+    // image: explorer,
     link: 'https://devcreed-project-explorer.herokuapp.com/',
     github: 'https://github.com/Elijah699/edconnect-weekly/tree/capstone',
     tech: 'ReactJS, Bootstrap, NodeJS, Express, MongoDB',
@@ -32,7 +32,7 @@ const projectData = [
     name: 'Covid Tracker',
     abstract:
       'A web application that keeps track of Corona Virus data around the world.',
-    image: covid,
+    // image: covid,
     link: 'https://covid-strain-tracker.netlify.app/',
     github: 'https://github.com/Elijah699/Covid-Strain',
     tech: 'HTML, CSS, Bootstrap, JS/ES6, Rest API',
@@ -44,7 +44,7 @@ const projectData = [
     name: 'Tandem Trivia',
     abstract:
       'A trivia that generates random 10 questions with multiple choices.',
-    image: tandem,
+    // image: tandem,
     link: 'https://ten-trivia.netlify.app/',
     github: 'https://github.com/Elijah699/Tandem-Trivia',
     tech: 'HTML, CSS, Bootstrap, JS',

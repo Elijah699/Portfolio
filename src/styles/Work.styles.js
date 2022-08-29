@@ -4,8 +4,8 @@ import styled from "styled-components";
 export const WorkWrapper = styled.div`
   font-family: 'Comfortaa', cursive;
   padding: 1.25rem;
-  margin: 2rem 0;
-  height: 100vh;
+  margin: 2rem 0 5rem;
+  /* height: 100vh; */
   width: 100%;
 
 

@@ -110,7 +110,7 @@ const Contact = () => {
                   <label htmlFor="Message">Message</label>
                   <textarea
                     name="Message"
-                    cols="50"
+                    cols="45"
                     rows="15"
                     spellCheck="false"
                     required
