@@ -10,7 +10,7 @@ const projectData = [
     abstract: 'MusiCity landing page.',
     // image: musicityImage,
     link: 'https://musicity.netlify.app/',
-    github: 'https://musicity.netlify.app/',
+    github: 'https://github.com/Elijah699/MusiCity',
     tech: 'ReactJS, Styled-components',
     classname: 'one',
   },

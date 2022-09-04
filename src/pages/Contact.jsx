@@ -22,7 +22,7 @@ const Contact = () => {
 
         <div className="con-info">
           <div className="flex">
-            <div className="con-1">
+            <div className="con-1 animate__animated animate__fadeInLeft">
               <div className="basic-contact">
                 <BsTelephone />
                 <div>
@@ -85,7 +85,7 @@ const Contact = () => {
                 </a>
               </div>
             </div>
-            <div className="con-2">
+            <div className="con-2 animate__animated animate__fadeInRight">
               <form
                 action="https://formsubmit.co/edunelijah18@gmail.com"
                 name="contactForm"

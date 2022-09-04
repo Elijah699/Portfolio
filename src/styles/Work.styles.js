@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 
-export const WorkWrapper = styled.div`
+export const WorkWrapper = styled.section`
   font-family: 'Comfortaa', cursive;
   padding: 1.25rem;
-  margin: 2rem 0 5rem;
-  /* height: 100vh; */
+  margin: 2rem 0 3rem;
   width: 100%;
 
 
@@ -24,4 +23,10 @@ export const WorkWrapper = styled.div`
       justify-content: space-between;
     }
   }
+
+  /* @media (max-width: 900px) {
+    .work-container {
+      margin: 0 4rem;
+    }
+  } */
 `;

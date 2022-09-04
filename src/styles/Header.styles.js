@@ -9,7 +9,7 @@ export const HeaderWrapper = styled.div`
   /* background-color: ; */
   z-index: 997;
   transition: all 0.5s;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0.125rem 0.9375rem rgba(0, 0, 0, 0.1);
 
   .header-container {
     margin: 0 4rem;
@@ -19,8 +19,8 @@ export const HeaderWrapper = styled.div`
 
   .icon {
     border: 0;
-    height: 40px;
-    width: 40px;
+    height: 2.5rem;
+    width: 2.5rem;
     padding: 0.5rem;
     cursor: pointer;
     transition: 0.3s ease-in-out;
@@ -55,13 +55,12 @@ export const HeaderWrapper = styled.div`
       width: 100%;
       color: #f6ccef;
 
-
       &:hover {
-      border-bottom: 3px solid #d700ff;
-      margin-top: 5px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+        margin-top: 0.3125rem;
+        border-bottom: 0.1875rem solid #d700ff;
+        border-radius: 0.3125rem;
+        cursor: pointer;
+      }
 
       &:active {
         color: #d700ff;
@@ -72,7 +71,14 @@ export const HeaderWrapper = styled.div`
 
   /* MEDIA QUERY */
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
+    .header-container {
+      margin: 0 2rem;
+    }
+  }
+
+
+  @media (max-width: 700px) {
     padding: 1rem;
 
     .header-container {
@@ -84,34 +90,42 @@ export const HeaderWrapper = styled.div`
     }
 
     .header-menu.active ul {
-      display: block;
+      /* display: block; */
+      left: 0;
     }
 
     .header-menu {
       ul {
-        display: none;
+        /* display: none; */
         // navigation menu is positioned to start 60px from the top of the document (which is directly below the navbar)
         position: absolute;
-        top: 70px;
-        left: 0;
+        top: 4.375rem;
+        left: -100%;
         // stacks li tag vertically
         flex-direction: column;
         // makes menu span full height and width
         width: 100%;
-        height: calc(100vh - 77px);
-        background-color: #fafafa;
+        height: 92vh; //calc(100vh - 77px)
+        background-color: #d700ff;
+        opacity: 0.8;
+        transition: 0.8s;
         border-top: 1px solid #000;
       }
 
       li {
         text-align: center;
-        margin: 0;
+        margin: 2rem 0 0;
       }
 
       a {
+        font-size: 1.5rem;
         color: #000;
         width: 100%;
         padding: 1.5rem 0;
+
+        &:hover {
+          color: #fff;
+        }
       }
     }
   }

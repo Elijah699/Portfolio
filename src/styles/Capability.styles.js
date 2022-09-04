@@ -1,17 +1,15 @@
 import styled from 'styled-components';
 import dot from '../assets/images/dot.jpg';
 
-export const CapabilityWrapper = styled.div`
+export const CapabilityWrapper = styled.section`
   font-family: 'Comfortaa', cursive;
   padding: 1.25rem;
-  margin: 2rem 0 5rem;
-  /* height: 100vh; */
+  margin: 2rem 0 3rem;
   width: 100%;
 
   .cap-container {
     margin: 0 4rem;
     padding: 2rem 0.94rem;
-
 
     .cap-info {
       display: flex;
@@ -27,7 +25,7 @@ export const CapabilityWrapper = styled.div`
           font-size: 14px;
           font-weight: 300;
           line-height: 1.8;
-          letter-spacing: 1px;
+          letter-spacing: 0.0625rem;
           margin: 0.8rem 0;
         }
 
@@ -35,7 +33,7 @@ export const CapabilityWrapper = styled.div`
           display: flex;
           width: 100%;
           flex-wrap: wrap;
-          max-width: 600px;
+          max-width: 37.5rem; //600px
           padding-top: 1.5rem;
 
           .skill-col {
@@ -44,13 +42,13 @@ export const CapabilityWrapper = styled.div`
             .skill {
               background-image: url(${dot});
               background-position: 0 50%;
-              background-size: 13px;
+              background-size: 0.8125rem;
               background-repeat: no-repeat;
               font-weight: 300;
-              margin-bottom: 8px;
-              padding-left: 35px;
+              margin-bottom: 0.5rem;
+              padding-left: 2.1875rem;
               color: #fff;
-              font-size: 18px;
+              font-size: 1.125rem;
             }
           }
         }
@@ -65,6 +63,21 @@ export const CapabilityWrapper = styled.div`
       }
     }
   }
-`;
 
-// #a588b0
+  @media (max-width: 900px) {
+    .cap-container {
+      margin: 0 2rem;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .cap-container {
+      .cap-info {
+        .col-1 {
+          margin-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+`;

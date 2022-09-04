@@ -48,7 +48,7 @@ export const ProjectWrapper = styled.div`
       height: 1.875rem;
       width: 1.875rem;
       font-size: 1.125rem;
-      line-height: 30px;
+      line-height: 1.875rem;
       text-align: center;
 
       opacity: 0;
@@ -139,8 +139,12 @@ export const ProjectWrapper = styled.div`
       svg {
         stroke: #fff;
         position: relative;
-        top: 3px;
+        top: 0.1875rem;
       }
     }
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
   }
 `;

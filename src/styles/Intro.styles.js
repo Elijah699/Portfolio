@@ -13,7 +13,7 @@ const RotateIcon = keyframes`
 
 export const IntroWrapper = styled.section`
   padding: 1.25rem;
-  height: 100vh;
+  /* height: 100vh; */
   width: 100%;
   color: #d700ff;
 
@@ -24,7 +24,7 @@ export const IntroWrapper = styled.section`
     margin: 0 4rem;
 
     p {
-      letter-spacing: 1.3px;
+      letter-spacing: 0.08125rem;
     }
 
     .intro-icons {
@@ -58,8 +58,8 @@ export const IntroWrapper = styled.section`
       span {
         padding-top: 2rem;
         background: #a588b0;
-        height: 70px;
-        width: 2px;
+        height: 4.375rem;
+        width: 0.125rem;
         text-align: center;
       }
     }
@@ -87,7 +87,7 @@ export const IntroWrapper = styled.section`
 
       .hero-animation {
         font-family: 'Comfortaa', cursive;
-        font-size: 20px;
+        font-size: 1.25rem;
         font-weight: 400;
         color: #916bbf;
         margin: 0.6rem 0;
@@ -101,23 +101,23 @@ export const IntroWrapper = styled.section`
       .third-p {
         padding: 1rem 0;
         color: #f6ccef;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 300;
         line-height: 2;
         width: 35vw;
       }
 
       .mail-div {
-        margin-top: 30px;
+        margin-top: 1.875rem;
         padding: 0.5rem 0;
 
         .btn {
           text-decoration: none;
           font-family: 'Josefin Sans', sans-serif;
           font-weight: 400;
-          padding: 16px 50px;
-          border: 1px solid;
-          border-radius: 5px;
+          padding: 1rem 3.125rem;
+          border: 0.0625rem solid;
+          border-radius: 0.3125rem;
           cursor: pointer;
           color: #f6ccef;
           outline: 0;
@@ -152,6 +152,28 @@ export const IntroWrapper = styled.section`
             top: 0.18rem;
             align-items: center;
           }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .intro-container {
+      margin: 0 2rem;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .intro-container {
+      .intro-icons {
+        display: none;
+      }
+
+      .intro-info {
+        margin-left: 0;
+
+        .third-p {
+          width: 55vw;
         }
       }
     }
