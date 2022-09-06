@@ -87,7 +87,7 @@ const Contact = () => {
             </div>
             <div className="con-2 animate__animated animate__fadeInRight">
               <form
-                action="https://formsubmit.co/bcdaaf3607100a9da79ec13208a0a815"
+                action="https://formsubmit.co/edunelijah18@gmail.com"
                 name="contactForm"
                 method="POST"
               >
