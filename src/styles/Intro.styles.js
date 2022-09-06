@@ -157,14 +157,12 @@ export const IntroWrapper = styled.section`
     }
   }
 
-
   /* MEDIA QUERIES */
   @media (max-width: 900px) {
     .intro-container {
       margin: 0 2rem;
     }
   }
-
 
   @media (max-width: 800px) {
     .intro-container {
@@ -181,7 +179,6 @@ export const IntroWrapper = styled.section`
       }
     }
   }
-
 
   @media (max-width: 576px) {
     .intro-container {

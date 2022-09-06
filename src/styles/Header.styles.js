@@ -107,7 +107,7 @@ export const HeaderWrapper = styled.div`
         width: 100%;
         height: 92vh; //calc(100vh - 77px)
         background-color: #d700ff;
-        opacity: 0.8;
+        opacity: 1;
         transition: 0.8s;
         border-top: 1px solid #000;
       }

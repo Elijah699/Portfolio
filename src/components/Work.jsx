@@ -14,21 +14,21 @@ const Work = () => {
         </div>
 
         <div className="work-info">
-            {projectData.map(
-              ({ id, name, abstract, image, link, github, tech, classname }) => (
-                <ProjectCard
-                  key={id}
-                  // id={id}
-                  name={name}
-                  abstract={abstract}
-                  image={image}
-                  link={link}
-                  github={github}
-                  tech={tech}
-                  classname={classname}
-                />
-              )
-            )}
+          {projectData.map(
+            ({ id, name, abstract, image, link, github, tech, classname }) => (
+              <ProjectCard
+                key={id}
+                // id={id}
+                name={name}
+                abstract={abstract}
+                image={image}
+                link={link}
+                github={github}
+                tech={tech}
+                classname={classname}
+              />
+            )
+          )}
         </div>
       </div>
     </WorkWrapper>
