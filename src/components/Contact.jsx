@@ -87,7 +87,7 @@ const Contact = () => {
             </div>
             <div className="con-2 animate__animated animate__fadeInRight">
               <form
-                action="https://formsubmit.co/cc2222f56bdfd6b6e2e04aa7d662c4da"
+                action="https://formsubmit.co/edunelijah18@gmail.com"
                 name="contactForm"
                 method="POST"
               >
@@ -96,7 +96,7 @@ const Contact = () => {
                 {/* Disable Captcha */}
                 <input type="hidden" name="_captcha" value="false" />
                 {/* Redirect */}
-                <input type="hidden" name="_next" value="/thanks.html" />
+                <input type="hidden" name="_next" value="https://edun.vercel.app/thanks.html" />
 
                 <div className="contact-field">
                   <label htmlFor="Name">Name</label>
