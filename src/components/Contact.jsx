@@ -11,7 +11,7 @@ import { FiGithub, FiTwitter, FiLinkedin } from 'react-icons/fi';
 import { ContactWrapper } from '../styles/Contact.styles';
 
 const Contact = () => {
-  const handleClick = () => {};
+  // const handleClick = () => {};
 
   return (
     <ContactWrapper id="contact" className="contact">
@@ -87,10 +87,17 @@ const Contact = () => {
             </div>
             <div className="con-2 animate__animated animate__fadeInRight">
               <form
-                action="https://formsubmit.co/edunelijah18@gmail.com"
+                action="https://formsubmit.co/cc2222f56bdfd6b6e2e04aa7d662c4da"
                 name="contactForm"
                 method="POST"
               >
+                {/* Honeypot */}
+                <input type="text" name="_honey" style={{ display: 'none' }} />
+                {/* Disable Captcha */}
+                <input type="hidden" name="_captcha" value="false" />
+                {/* Redirect */}
+                <input type="hidden" name="_next" value="/thanks.html" />
+
                 <div className="contact-field">
                   <label htmlFor="Name">Name</label>
                   <input type="text" name="Name" required />
@@ -121,7 +128,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     className="submit"
-                    onClick={handleClick}
+                    // onClick={handleClick}
                   >
                     Send Message <IoRocketOutline size={18} />{' '}
                   </button>

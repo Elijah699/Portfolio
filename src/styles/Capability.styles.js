@@ -64,11 +64,14 @@ export const CapabilityWrapper = styled.section`
     }
   }
 
+
+  /* MEDIA QUERIES */
   @media (max-width: 900px) {
     .cap-container {
       margin: 0 2rem;
     }
   }
+
 
   @media (max-width: 800px) {
     .cap-container {
@@ -76,6 +79,39 @@ export const CapabilityWrapper = styled.section`
         .col-1 {
           margin-left: 0;
           padding-right: 0;
+        }
+      }
+    }
+  }
+
+
+  @media (max-width: 576px) {
+    margin: 2rem 0 1rem;
+
+    .cap-container {
+      padding: 2rem 0;
+      .cap-info {
+        flex-direction: column-reverse;
+
+        .col-1 {
+          width: 100%;
+          margin-top: 1rem;
+
+          .cap-skills {
+            flex-direction: column;
+
+            .skill-col {
+              width: 100%;
+
+              .skill {
+                padding-top: 0.5rem;
+              }
+            }
+          }
+        }
+
+        .col-2 {
+          width: 60%;
         }
       }
     }

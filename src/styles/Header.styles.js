@@ -6,7 +6,6 @@ export const HeaderWrapper = styled.div`
   position: relative;
   width: 100%;
   padding: 1.25rem;
-  /* background-color: ; */
   z-index: 997;
   transition: all 0.5s;
   box-shadow: 0px 0.125rem 0.9375rem rgba(0, 0, 0, 0.1);
@@ -69,7 +68,8 @@ export const HeaderWrapper = styled.div`
     }
   }
 
-  /* MEDIA QUERY */
+
+  /* MEDIA QUERIES */
 
   @media (max-width: 900px) {
     .header-container {

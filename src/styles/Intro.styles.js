@@ -124,6 +124,7 @@ export const IntroWrapper = styled.section`
         }
 
         .mail {
+          margin-left: 0.7rem;
           background: #d700ff;
 
           &:hover {
@@ -133,7 +134,6 @@ export const IntroWrapper = styled.section`
         }
 
         .resume {
-          margin-left: 0.7rem;
           background: transparent;
 
           &:hover {
@@ -157,11 +157,14 @@ export const IntroWrapper = styled.section`
     }
   }
 
+
+  /* MEDIA QUERIES */
   @media (max-width: 900px) {
     .intro-container {
       margin: 0 2rem;
     }
   }
+
 
   @media (max-width: 800px) {
     .intro-container {
@@ -174,6 +177,43 @@ export const IntroWrapper = styled.section`
 
         .third-p {
           width: 55vw;
+        }
+      }
+    }
+  }
+
+
+  @media (max-width: 576px) {
+    .intro-container {
+      padding: 3rem 0;
+
+      .intro-info {
+        .main-p {
+          font-size: 9vw;
+
+          .middle-name {
+            display: none;
+          }
+        }
+
+        .hero-animation {
+          font-size: 4vw;
+        }
+
+        .third-p {
+          width: 65vw;
+        }
+
+        .mail-div {
+          a {
+            display: block;
+            text-align: center;
+          }
+
+          .mail {
+            margin-top: 1rem;
+            margin-left: 0;
+          }
         }
       }
     }

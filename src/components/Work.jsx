@@ -17,7 +17,8 @@ const Work = () => {
             {projectData.map(
               ({ id, name, abstract, image, link, github, tech, classname }) => (
                 <ProjectCard
-                  id={id}
+                  key={id}
+                  // id={id}
                   name={name}
                   abstract={abstract}
                   image={image}

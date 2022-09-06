@@ -134,6 +134,7 @@ export const ContactWrapper = styled.section`
     text-align: center;
   }
 
+  /* MEDIA QUERIES */
   @media (max-width: 900px) {
     .con-container {
       margin: 0 2rem;
@@ -156,6 +157,22 @@ export const ContactWrapper = styled.section`
 
     .contact-icons {
       justify-content: center;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .con-container {
+      padding: 2rem 0;
+    }
+
+    .con-1 {
+      .contact-icons {
+        .social-icon {
+          svg {
+            font-size: 1.5rem;
+          }
+        }
+      }
     }
   }
 `;

@@ -8,6 +8,7 @@
 
 body {
   background-color: #000;
+  color: #fcccef;
   overflow-x: hidden;
 }
 
@@ -47,11 +48,46 @@ body {
   left: calc(50% - 20px);
 }
 
+
+/* Thanks page */
+.thanks-container {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  margin: 5rem;
+  padding: 5rem;
+}
+
+.thanks-container .icon {
+  font-size: 3rem;
+}
+
+.thanks-container h1 {
+  margin: 1.5rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.thanks-container h3 {
+  margin: 1.5rem 0;
+  font-size: 1.5rem;
+}
+
+
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+/* loader */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #000;
+}
 
 ::-webkit-scrollbar {
   width: 0.375rem;

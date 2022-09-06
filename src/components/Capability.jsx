@@ -68,14 +68,3 @@ const Capability = () => {
 };
 
 export default Capability;
-
-// Since beginning my journey as a freelance designer over 11 years, I've done remote work for agencies,
-// consulted for startups, and collaborated with talented people to create digital products for both
-// business and consumer use. I'm quietly confident,
-// naturally curious, and perpetually working on improving my chops one design problem at a time.
-
-// Accessible websites that look great on any screen.
-
-// Sustainable projects that are well documented & easy to maintain.
-
-// Well supported CMSs and Frameworks - from custom theme & plugin development, to implementation & administration.

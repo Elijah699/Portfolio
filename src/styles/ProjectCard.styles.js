@@ -7,7 +7,6 @@ import explorer from '../assets/images/p-explorer.jpg';
 import covid from '../assets/images/covid.jpg';
 import tandem from '../assets/images/tandem.jpg';
 
-
 export const ProjectWrapper = styled.div`
   width: 45%;
   height: 100%;
@@ -144,6 +143,7 @@ export const ProjectWrapper = styled.div`
     }
   }
 
+  /* MEDIA QUERY */
   @media (max-width: 900px) {
     width: 100%;
   }

@@ -24,9 +24,13 @@ export const WorkWrapper = styled.section`
     }
   }
 
-  /* @media (max-width: 900px) {
+
+  /* MEDIA QUERY */
+
+  @media (max-width: 576px) {
     .work-container {
-      margin: 0 4rem;
+      margin: 0 2rem;
+      padding: 2rem 0;
     }
-  } */
+  } 
 `;

@@ -55,7 +55,9 @@ const Intro = () => {
           <p className="first-p">
             Hello <Wave>👋</Wave>, I'm
           </p>
-          <p className="main-p">Elijah Oluwakayode Edun.</p>
+          <p className="main-p">
+            Elijah <span className="middle-name">Oluwakayode</span> Edun.
+          </p>
           <div className="hero-animation">
             <span className="hero-span">I'm a </span>
             <ReactTypingEffect
@@ -80,6 +82,14 @@ const Intro = () => {
 
           <div className="mail-div">
             <a
+              href="https://docs.google.com/document/d/1WOw30JJPRcpXjAk7Kg6PmwmhFQ3o0hgaRGEMhm-LKA4/edit?usp=sharing"
+              className="btn resume"
+              target="_blank"
+              rel="noreferrer"
+            >
+              RESUME
+            </a>
+            <a
               className="btn mail"
               href="mailto:devcreed18@gmail.com?Subject=GET IN TOUCH"
               target="_blank"
@@ -89,14 +99,6 @@ const Intro = () => {
               <span className="arrow">
                 <CgArrowLongRight />
               </span>
-            </a>
-            <a
-              href="https://www.google.com"
-              className="btn resume"
-              target="_blank"
-              rel="noreferrer"
-            >
-              RESUME
             </a>
           </div>
         </div>
