@@ -14,6 +14,7 @@ export const ProjectCard = ({
   link,
   github,
   tech,
+  techArray,
   classname,
 }) => {
   return (
@@ -41,6 +42,12 @@ export const ProjectCard = ({
           <a href={github}>
             <IoGitBranchOutline /> Code
           </a>
+        </div>
+
+        <div className="tech-container">
+          {techArray.map((item) => (
+            <div className="tech">{item}</div>
+          ))}
         </div>
       </div>
     </ProjectWrapper>

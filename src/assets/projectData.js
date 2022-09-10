@@ -12,6 +12,7 @@ const projectData = [
     link: 'https://musicity.netlify.app/',
     github: 'https://github.com/Elijah699/MusiCity',
     tech: 'ReactJS, Styled-components',
+    techArray: ['ReactJS', 'Styled-compnents'],
     classname: 'one',
   },
 
@@ -24,6 +25,7 @@ const projectData = [
     link: 'https://devcreed-project-explorer.herokuapp.com/',
     github: 'https://github.com/Elijah699/edconnect-weekly/tree/capstone',
     tech: 'ReactJS, Bootstrap, NodeJS, Express, MongoDB',
+    techArray: ['ReactJS', 'Bootstrap', 'NodeJS', 'ExpressJS', 'MongoDB'],
     classname: 'two',
   },
 
@@ -36,6 +38,7 @@ const projectData = [
     link: 'https://covid-strain-tracker.netlify.app/',
     github: 'https://github.com/Elijah699/Covid-Strain',
     tech: 'HTML, CSS, Bootstrap, JS/ES6, Rest API',
+    techArray: ['HTML/CSS', 'Bootstrap', 'Javascript/ES6', 'Rest API'],
     classname: 'three',
   },
 
@@ -48,6 +51,7 @@ const projectData = [
     link: 'https://ten-trivia.netlify.app/',
     github: 'https://github.com/Elijah699/Tandem-Trivia',
     tech: 'HTML, CSS, Bootstrap, JS',
+    techArray: ['HTML/CSS', 'Bootstrap', 'Javascript/ES6'],
     classname: 'four',
   },
 ];

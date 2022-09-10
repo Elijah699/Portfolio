@@ -143,8 +143,36 @@ export const ProjectWrapper = styled.div`
     }
   }
 
-  /* MEDIA QUERY */
+  .tech-container {
+    display: flex;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+
+    .tech {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 13px;
+      border: 1px solid #30206f;
+      border-radius: 5px;
+      padding: 13px 15px;
+      text-align: center;
+      margin: 0.5rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  /* MEDIA QUERIES */
   @media (max-width: 900px) {
     width: 100%;
+  }
+
+  @media (max-width: 576px) {
+    .img-container {
+      .overlay {
+        display: none;
+      }
+    }
   }
 `;

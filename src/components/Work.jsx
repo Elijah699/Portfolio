@@ -15,7 +15,7 @@ const Work = () => {
 
         <div className="work-info">
           {projectData.map(
-            ({ id, name, abstract, image, link, github, tech, classname }) => (
+            ({ id, name, abstract, image, link, github, tech, techArray, classname }) => (
               <ProjectCard
                 key={id}
                 // id={id}
@@ -26,6 +26,7 @@ const Work = () => {
                 github={github}
                 tech={tech}
                 classname={classname}
+                techArray={techArray}
               />
             )
           )}
