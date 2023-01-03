@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 // images
 import overlay from '../assets/images/overlay-bg.png';
-import musicity from '../assets/images/musicity.jpg';
+import invoice from '../assets/images/invoice-generator.png';
 import explorer from '../assets/images/p-explorer.jpg';
 import covid from '../assets/images/covid.jpg';
 import tandem from '../assets/images/tandem.jpg';
@@ -92,7 +92,7 @@ export const ProjectWrapper = styled.div`
   }
 
   .one {
-    background: url(${musicity});
+    background: url(${invoice});
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
