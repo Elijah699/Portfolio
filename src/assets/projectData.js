@@ -6,11 +6,11 @@
 const projectData = [
   {
     id: 1,
-    name: 'MusiCity',
-    abstract: 'MusiCity landing page.',
+    name: 'Invoice Generator',
+    abstract: 'A Frontend Mentor Guru Challenge with a little tweak.',
     // image: musicityImage,
-    link: 'https://musicity.netlify.app/',
-    github: 'https://github.com/Elijah699/MusiCity',
+    link: 'https://free-invoice.netlify.app/',
+    github: 'https://github.com/Elijah699/Invoice-Generator',
     tech: 'ReactJS, Styled-components',
     techArray: ['ReactJS', 'Styled-compnents'],
     classname: 'one',
