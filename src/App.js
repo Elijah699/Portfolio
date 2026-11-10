@@ -1,48 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import PacmanLoader from 'react-spinners/PacmanLoader';
+import React from 'react';
 
 // pages
+import ScrollProgress from './components/ScrollProgress';
 import Header from './components/Header';
 import Intro from './components/Intro';
-import Capability from './components/Capability';
-import Contact from './components/Contact';
+import About from './components/About';
+import Expertise from './components/Expertise';
+import Experience from './components/Experience';
 import Work from './components/Work';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 const App = () => {
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
-  }, []);
-
-  const override = `
-      background: none;
-  `;
-
   return (
-    <div>
-      {loading ? (
-        <div className="loading-container">
-          <PacmanLoader
-            size={40}
-            css={override}
-            color={'#3d2c8d'}
-            loading={loading}
-          />
-        </div>
-      ) : (
-        <div>
-          <Header />
-          <Intro />
-          <Capability />
-          <Work />
-          <Contact />
-        </div>
-      )}
-    </div>
+    <>
+      <ScrollProgress />
+      <Header />
+      <main>
+        <Intro />
+        <About />
+        <Expertise />
+        <Experience />
+        <Work />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 };
 

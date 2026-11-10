@@ -1,54 +1,54 @@
 /* Thanks page */
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 #thanks-body {
-  background-color: #000;
-  color: #fcccef;
-  height: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: radial-gradient(circle at 50% 0%, rgba(183, 123, 255, 0.18), transparent 55%), #07060b;
+  color: #eeeaf6;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 .thanks-container {
-  font-family: 'Josefin Sans', sans-serif;
-  align-items: center;
+  max-width: 32rem;
   text-align: center;
-  margin: 2rem;
 }
 
 .thanks-container .icon {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  color: #b77bff;
 }
 
 .thanks-container h1 {
-  margin: 1.5rem 0;
-  font-size: 2.5rem;
-  font-weight: 700;
+  margin: 1.5rem 0 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.75rem, 6vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .thanks-container h3 {
-  margin: 1.5rem 0;
-  font-size: 1.5rem;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: #a39db3;
 }
 
 .thanks-container .go-back {
-  font-size: 1.5rem;
-}
-
-
-@media (max-width: 768px) {
-  .thanks-container {
-    text-align: left;
-  }
-
-  .thanks-container p {
-    text-align: center;
-  }
-
-  .thanks-container h1 {
-    font-size: 5vw;
-  }
-
-  .thanks-container h3 {
-    text-align: center;
-    font-size: 3vw;
-  }
+  display: inline-block;
+  margin-top: 2.5rem;
+  padding: 0.875rem 1.5rem;
+  border-radius: 999px;
+  background: #eeeaf6;
+  color: #07060b;
+  font-weight: 500;
+  text-decoration: none;
 }

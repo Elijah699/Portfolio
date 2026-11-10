@@ -1,36 +1,60 @@
-import React from 'react';
-import { ProjectCard } from '../components/ProjectCard';
-import projectData from '../assets/projectData';
+import React, { useState } from 'react';
+import SectionHeading from './SectionHeading';
+import Reveal from './Reveal';
+import { ProjectCard } from './ProjectCard';
+import { projects } from '../assets/content';
 
 // styles
 import { WorkWrapper } from '../styles/Work.styles';
 
+const ALL = 'All';
+const categories = [ALL, ...new Set(projects.map(({ category }) => category))];
+
 const Work = () => {
+  const [filter, setFilter] = useState(ALL);
+  const visible = filter === ALL ? projects : projects.filter((p) => p.category === filter);
+
   return (
-    <WorkWrapper id="work">
-      <div className="work-container">
-        <div className="section-title">
-          <h2>WORK</h2>
+    <WorkWrapper id="work" className="section">
+      <div className="container">
+        <SectionHeading index="04" eyebrow="Selected work" title="Things I've built.">
+          A selection of some old projects — each links to the live build and its source.
+        </SectionHeading>
+
+        {/* filters only make sense once there is more than one category */}
+        {categories.length > 2 && (
+          <Reveal className="filters" role="group" aria-label="Filter projects">
+            {categories.map((category) => (
+              <button
+                key={category}
+                className={filter === category ? 'filter active' : 'filter'}
+                aria-pressed={filter === category}
+                onClick={() => setFilter(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </Reveal>
+        )}
+
+        <div className="work-grid">
+          {visible.map((project, i) => (
+            <Reveal key={project.name} delay={(i % 2) * 120}>
+              <ProjectCard {...project} />
+            </Reveal>
+          ))}
         </div>
 
-        <div className="work-info">
-          {projectData.map(
-            ({ id, name, abstract, image, link, github, tech, techArray, classname }) => (
-              <ProjectCard
-                key={id}
-                // id={id}
-                name={name}
-                abstract={abstract}
-                image={image}
-                link={link}
-                github={github}
-                tech={tech}
-                classname={classname}
-                techArray={techArray}
-              />
-            )
-          )}
-        </div>
+        <Reveal className="more">
+          <a
+            className="button button-ghost"
+            href="https://github.com/Elijah699"
+            target="_blank"
+            rel="noreferrer"
+          >
+            More on GitHub
+          </a>
+        </Reveal>
       </div>
     </WorkWrapper>
   );

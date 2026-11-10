@@ -1,107 +1,146 @@
-import React from 'react';
-import ReactTypingEffect from 'react-typing-effect';
-// icons
-import { CgArrowLongRight } from 'react-icons/cg';
-import { FaWhatsapp } from 'react-icons/fa';
-import { FiGithub, FiTwitter, FiLinkedin } from 'react-icons/fi';
+import React, { useEffect, useState } from 'react';
+import { FiArrowRight, FiArrowUpRight } from 'react-icons/fi';
+import SocialLinks from './SocialLinks';
+import CountUp from './CountUp';
+import { profile, stats, expertise } from '../assets/content';
+
 // styles
-import { IntroWrapper, Wave } from '../styles/Intro.styles';
+import { IntroWrapper } from '../styles/Intro.styles';
+
+const RoleRotator = ({ roles }) => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setIndex((i) => (i + 1) % roles.length), 2800);
+    return () => clearInterval(id);
+  }, [roles.length]);
+
+  return (
+    <span className="role-rotator">
+      <span className="sr-only">{roles.join(', ')}</span>
+      <span key={index} className="role" aria-hidden="true">
+        {roles[index]}
+      </span>
+    </span>
+  );
+};
+
+// Each line is "typed" in sequence by CSS, using its index (--i) for the delay.
+const CodeCard = () => {
+  const stack = expertise.map(({ id, tags }) => ({ key: id, values: tags.slice(0, 2) }));
+
+  const lines = [
+    <>
+      <span className="c-key">export const</span> <span className="c-var">engineer</span> = {'{'}
+    </>,
+    <>
+      {'  '}name: <span className="c-str">'{profile.name}'</span>,
+    </>,
+    <>
+      {'  '}experience: <span className="c-str">'{profile.yearsOfExperience} years'</span>,
+    </>,
+    <>{'  '}stack: {'{'}</>,
+    ...stack.map(({ key, values }) => (
+      <>
+        {'    '}
+        {key}: [
+        {values.map((v, i) => (
+          <React.Fragment key={v}>
+            <span className="c-str">'{v}'</span>
+            {i < values.length - 1 ? ', ' : ''}
+          </React.Fragment>
+        ))}
+        ],
+      </>
+    )),
+    <>{'  '}{'}'},</>,
+    <>
+      {'  '}ships: <span className="c-bool">true</span>,
+    </>,
+    <>
+      {'}'};<span className="caret" />
+    </>,
+  ];
+
+  return (
+    <div className="code-card" aria-hidden="true">
+      <div className="code-card-bar">
+        <span className="dot" />
+        <span className="dot" />
+        <span className="dot" />
+        <span className="file">engineer.ts</span>
+      </div>
+      <pre>
+        <code>
+          {lines.map((line, i) => (
+            <span className="line" key={i} style={{ '--i': i }}>
+              {line}
+            </span>
+          ))}
+        </code>
+      </pre>
+    </div>
+  );
+};
 
 const Intro = () => {
   return (
-    <IntroWrapper>
-      <div className="intro-container">
-        <div className="intro-icons">
-          <a
-            className="social-icon"
-            href="https://github.com/Elijah699"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FiGithub size={20} />
-          </a>
-
-          <a
-            className="social-icon"
-            href="https://www.linkedin.com/in/edun-elijah-3850081a3/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FiLinkedin size={20} />
-          </a>
-
-          <a
-            className="social-icon"
-            href="https://twitter.com/devCreed"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FiTwitter size={20} />
-          </a>
-
-          <a
-            className="social-icon"
-            href="https://wa.me/2349072334063"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaWhatsapp size={20} />
-          </a>
-
-          <span></span>
-        </div>
-
+    <IntroWrapper id="top">
+      <div className="glow" aria-hidden="true" />
+      <div className="container intro-container">
         <div className="intro-info">
-          <p className="first-p">
-            Hello <Wave>👋</Wave>, I'm
+          <p className="eyebrow">
+            <span className="pulse" aria-hidden="true" />
+            {profile.name} · {profile.yearsOfExperience} years experience
           </p>
-          <p className="main-p">
-            Elijah <span className="middle-name">Oluwakayode</span> Edun.
+
+          <h1>
+            I build fast, accessible products for the{' '}
+            <span className="gradient-text">web, mobile</span> and the{' '}
+            <span className="gradient-text">APIs</span> behind them.
+          </h1>
+
+          <p className="summary">
+            <RoleRotator roles={profile.roles} /> — shipping production React
+            apps for over five years, now delivering cross-platform mobile apps
+            with React Native and backend services with NestJS.
           </p>
-          <div className="hero-animation">
-            <span className="hero-span">I'm a </span>
-            <ReactTypingEffect
-              text={[
-                'Frontend Developer.',
-                'Tech Enthusiast & an Opensource Contributor.',
-                'Crypto & Web 3 Lover.',
-              ]}
-              speed={100}
-              eraseDelay={300}
-              eraseSpeed={200}
-              typingDelay={2000}
-            />
+
+          <div className="actions">
+            <a className="button button-primary" href="#work">
+              View my work <FiArrowRight />
+            </a>
+            <a
+              className="button button-ghost"
+              href={profile.resume}
+              target="_blank"
+              rel="noreferrer"
+            >
+              View resume <FiArrowUpRight />
+            </a>
           </div>
 
-          <p className="third-p">
-            {' '}
-            I specialise in building scalable web apps and providing better
-            experience for users meaning I code beautifully simple things that
-            intrigues users, and I love what I do.
-          </p>
-
-          <div className="mail-div">
-            <a
-              href="https://docs.google.com/document/d/1WOw30JJPRcpXjAk7Kg6PmwmhFQ3o0hgaRGEMhm-LKA4/edit?usp=sharing"
-              className="btn resume"
-              target="_blank"
-              rel="noreferrer"
-            >
-              RESUME
-            </a>
-            <a
-              className="btn mail"
-              href="mailto:devcreed18@gmail.com?Subject=GET IN TOUCH"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GET IN TOUCH
-              <span className="arrow">
-                <CgArrowLongRight />
-              </span>
-            </a>
+          <div className="meta">
+            <SocialLinks className="socials" />
           </div>
         </div>
+
+        <div className="intro-visual">
+          <CodeCard />
+        </div>
+      </div>
+
+      <div className="container">
+        <dl className="stats">
+          {stats.map(({ value, label }) => (
+            <div className="stat" key={label}>
+              <dt>{label}</dt>
+              <dd>
+                <CountUp value={value} />
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </IntroWrapper>
   );

@@ -1,131 +1,149 @@
 import styled from 'styled-components';
 
+export const HeaderWrapper = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 
-export const HeaderWrapper = styled.div`
-  font-family: 'Comfortaa', cursive;
-  position: relative;
-  width: 100%;
-  padding: 1.25rem;
-  z-index: 997;
-  transition: all 0.5s;
-  box-shadow: 0px 0.125rem 0.9375rem rgba(0, 0, 0, 0.1);
+  // the blur lives on a pseudo-element: backdrop-filter on the header itself
+  // would become the containing block for the fixed mobile menu
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  &.scrolled::before {
+    background: rgba(7, 6, 11, 0.75);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    backdrop-filter: saturate(160%) blur(14px);
+    border-bottom-color: var(--border);
+  }
 
   .header-container {
-    margin: 0 4rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
   }
 
-  .icon {
-    border: 0;
-    height: 2.5rem;
-    width: 2.5rem;
-    padding: 0.5rem;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    position: absolute;
-    top: 50%;
-    right: 25px;
-    transform: translateY(-50%);
-    display: none;
-    background-color: #000;
-
-    svg {
-      color: #f6ccef;
-    }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    letter-spacing: -0.01em;
   }
 
-  .header-menu {
-    margin-left: auto;
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 
     ul {
       display: flex;
-      padding: 0;
+      gap: 0.25rem;
+      list-style: none;
     }
 
-    li {
-      list-style-type: none;
-      margin: 0 2rem;
-    }
-
-    a {
-      text-decoration: none;
+    ul a {
       display: block;
-      width: 100%;
-      color: #f6ccef;
+      padding: 0.5rem 0.875rem;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.9375rem;
+      transition: color 0.2s ease, background-color 0.2s ease;
 
       &:hover {
-        margin-top: 0.3125rem;
-        border-bottom: 0.1875rem solid #d700ff;
-        border-radius: 0.3125rem;
-        cursor: pointer;
+        color: var(--text);
       }
 
-      &:active {
-        color: #d700ff;
-        transition: all 0.3s linear;
+      &.active {
+        color: var(--text);
+        background: var(--surface-2);
       }
+    }
+
+    .resume {
+      height: 2.5rem;
+      padding: 0 1.125rem;
+      font-size: 0.875rem;
     }
   }
 
+  .menu-toggle {
+    display: none;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0.625rem;
+    margin-right: -0.625rem;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
 
   /* MEDIA QUERIES */
-
-  @media (max-width: 900px) {
-    .header-container {
-      margin: 0 2rem;
-    }
-  }
-
-
-  @media (max-width: 700px) {
-    padding: 1rem;
-
-    .header-container {
-      margin: 0 0.5rem;
+  @media (max-width: 860px) {
+    .menu-toggle {
+      display: inline-flex;
     }
 
-    .icon {
-      display: block;
-    }
-
-    .header-menu.active ul {
-      /* display: block; */
+    .header-nav {
+      position: fixed;
+      top: var(--header-height);
       left: 0;
-    }
+      right: 0;
+      bottom: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2.5rem;
+      padding: 2.5rem var(--gutter);
+      background: var(--bg);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-0.75rem);
+      transition: opacity 0.3s var(--ease), transform 0.3s var(--ease),
+        visibility 0.3s;
 
-    .header-menu {
-      ul {
-        /* display: none; */
-        // navigation menu is positioned to start 60px from the top of the document (which is directly below the navbar)
-        position: absolute;
-        top: 4.375rem;
-        left: -100%;
-        // stacks li tag vertically
-        flex-direction: column;
-        // makes menu span full height and width
-        width: 100%;
-        height: 92vh; //calc(100vh - 77px)
-        background-color: #d700ff;
+      &.open {
         opacity: 1;
-        transition: 0.8s;
-        border-top: 1px solid #000;
+        visibility: visible;
+        transform: none;
       }
 
-      li {
-        text-align: center;
-        margin: 2rem 0 0;
-      }
-
-      a {
-        font-size: 1.5rem;
-        color: #000;
+      ul {
+        flex-direction: column;
         width: 100%;
-        padding: 1.5rem 0;
+        gap: 0;
+      }
 
-        &:hover {
-          color: #fff;
+      ul a {
+        padding: 1rem 0;
+        border-radius: 0;
+        border-bottom: 1px solid var(--border);
+        font-family: var(--font-display);
+        font-size: 1.75rem;
+        color: var(--text);
+
+        &.active {
+          background: none;
+          color: var(--accent);
         }
+      }
+
+      .resume {
+        height: 3rem;
+        padding: 0 1.5rem;
+        font-size: 1rem;
       }
     }
   }
