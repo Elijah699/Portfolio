@@ -1,7 +1,7 @@
 <h1 align="center">Personal Portfolio</h1>
 
 <div align="center">
-    This project is built to showcase my work and skills.
+    Portfolio of Elijah Edun — Frontend Engineer (5+ years) working across web (React), mobile (React Native) and backend (NestJS).
 </div>
 
 <div align="center">
@@ -28,6 +28,10 @@
 
 - [React](https://reactjs.org/)
 - [Styled-components](https://styled-components.com/)
+
+### Editing content
+
+All copy, skills, experience and projects live in [`src/assets/content.js`](./src/assets/content.js). Give a project a `category` of `Web`, `Mobile` or `Backend` — filter tabs appear automatically once there is more than one category.
 
 ## How To Use
 

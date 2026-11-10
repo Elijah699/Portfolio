@@ -1,178 +1,163 @@
-import styled, { keyframes } from 'styled-components';
-
-const RotateIcon = keyframes`
-  0% {
-      transform: rotate(-360deg);
-      opacity: 0;
-    }
-    100% {
-      transform: rotate(0);
-      opacity: 1;
-    }
-`;
+import styled from 'styled-components';
 
 export const ContactWrapper = styled.section`
-  font-family: 'Comfortaa', cursive;
-  padding: 1.25rem;
-  margin: 3rem 0 1rem;
-  width: 100%;
-
-  .flex {
-    display: flex;
-    flex-direction: row;
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: 4rem;
+    align-items: start;
   }
 
-  .con-container {
-    margin: 0 4rem;
-    padding: 2rem 0.94rem;
-    color: #f6ccef;
+  .email {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.6vw, 1.875rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    word-break: break-all;
+    background-image: var(--gradient);
+    background-size: 0% 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 0.25rem;
+    transition: background-size 0.4s var(--ease);
+
+    &:hover {
+      background-size: 100% 2px;
+    }
+
+    svg {
+      flex-shrink: 0;
+      color: var(--accent);
+    }
   }
 
-  .con-1,
-  .con-2 {
-    width: 50%;
-  }
+  .info {
+    list-style: none;
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--border);
 
-  .con-1 {
-    .basic-contact {
+    li {
       display: flex;
-      padding: 0.75rem 1rem 0.25rem;
-      margin: 1rem 0;
-      margin-bottom: 2rem;
-      color: #f6ccef;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.125rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
 
       svg {
-        fill: #a588b0;
-        font-size: 2rem;
-        margin-right: 0.75rem;
+        flex-shrink: 0;
+        color: var(--subtle);
       }
-    }
 
-    .contact-icons {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 5rem 1rem 1rem;
-
-      .social-icon {
-        text-align: center;
-        color: #a588b0;
-        margin-right: 2rem;
-
-        svg {
-          font-size: 2.5rem;
-
-          &:hover {
-            stroke: #ffffff;
-          }
-        }
-
-        &:hover {
-          -webkit-animation: ${RotateIcon} 0.6s
-            cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-          animation: ${RotateIcon} 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-            both;
-        }
+      a:hover {
+        color: var(--text);
       }
     }
   }
 
-  .con-2 {
-    .contact-field {
-      background-color: #3d2c8d;
-      border-radius: 0.5rem;
-      padding: 0.75rem 1rem 0.25rem;
-      margin: 1rem 0;
-    }
+  .socials {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    list-style: none;
 
-    label {
-      display: block;
-      margin-bottom: 0.7rem;
-    }
+    a {
+      display: grid;
+      place-items: center;
+      width: 3rem;
+      height: 3rem;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      color: var(--muted);
+      transition: color 0.2s ease, border-color 0.2s ease, transform 0.3s var(--ease);
 
-    input,
-    textarea {
-      width: 100%;
-      background-color: #3d2c8d;
-      color: #f6ccef;
+      &:hover {
+        color: var(--text);
+        border-color: var(--text);
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.625rem;
+    background: var(--surface-2);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.9375rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
       outline: none;
-      border: none;
-      padding: 0.25rem 0.5rem;
-    }
-
-    .btn {
-      text-align: center;
-
-      .submit {
-        margin: 1rem 0;
-        font-family: 'Josefin Sans', sans-serif;
-        font-size: 1rem;
-        font-weight: 400;
-        padding: 1rem 3.125rem;
-        border: 0.0625rem solid;
-        border-radius: 0.3125rem;
-        cursor: pointer;
-        color: #f6ccef;
-        outline: 0;
-        background: transparent;
-
-        &:hover {
-          background: #916bbf;
-          color: #000;
-        }
-
-        svg {
-          position: relative;
-          top: 0.3125rem;
-        }
-      }
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
     }
   }
 
-  .footer {
-    padding: 3rem 0 0.5rem;
-    text-align: center;
+  textarea {
+    resize: vertical;
+    min-height: 9rem;
+  }
+
+  .submit {
+    align-self: flex-start;
+    margin-top: 0.5rem;
   }
 
   /* MEDIA QUERIES */
   @media (max-width: 900px) {
-    .con-container {
-      margin: 0 2rem;
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
     }
   }
 
-  @media (max-width: 700px) {
-    .flex {
-      flex-direction: column-reverse;
+  @media (max-width: 640px) {
+    .form {
+      padding: 1.5rem;
     }
 
-    .con-1,
-    .con-2 {
-      width: 100%;
+    .row {
+      grid-template-columns: 1fr;
     }
 
-    .con-1 {
-      margin-top: 3rem;
-    }
-
-    .contact-icons {
-      justify-content: center;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .con-container {
-      padding: 2rem 0;
-    }
-
-    .con-1 {
-      .contact-icons {
-        .social-icon {
-          svg {
-            font-size: 1.5rem;
-          }
-        }
-      }
+    .submit {
+      align-self: stretch;
     }
   }
 `;
